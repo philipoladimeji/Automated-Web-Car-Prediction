@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>An automated service to predict model Car Prices</title>
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Price Cars</h1>
+
+
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="age" placeholder="Age" required="required" />
+        <input type="text" name="mileage" placeholder="Mileage" required="required" />
+		<input type="text" name="car_type(1 is auto/0 manual)" placeholder="car_type(1 is auto/0 manual)" required="required" />
+        <input type="text" name="Gas_Type(1-gasoline,0-diesel)" placeholder="Gas_Type(1-gasoline,0-diesel)" required="required" />
+		<input type="text" name="cylinder_volume" placeholder="Cylinder Volume (CC)" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
